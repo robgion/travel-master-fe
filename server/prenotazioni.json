@@ -2,12 +2,22 @@
    "mezzi":[
        {
            "id": 1,
-           "nome": "auto"
+           "tipo": "auto",
+           "codice_mezzo": "DF584CV",
+           "posti":5
        },
        {
            "id": 2,
-           "nome": "autobus"
-       }
+           "tipo": "autobus",
+           "codice_mezzo": "DF584CV",
+           "posti":200
+       },
+       {
+        "id": 3,
+        "tipo": "auto",
+        "codice_mezzo": "AA511BL",
+        "posti":5
+        }
    ],
    "viaggi":[
     {    
@@ -17,30 +27,26 @@
         "data_fine": "16/12/2022",
         "luogo_partenza": "Napoli",
         "luogo_arrivo": "Milano",
-        "ora": 16,
-        "posti":200
-
-    },
-    {    
-     "id": 2,
-     "id_mezzo": 2,
-      "data_inizio":"18/12/2022",
-      "data_fine": "19/12/2022",
-      "luogo_partenza": "Napoli",
-      "luogo_arrivo": "Milano",
-      "ora": 17,
-      "posti":200
+        "ora": 16
     },
     {    
         "id": 2,
         "id_mezzo": 2,
-         "data_inizio":"18/12/2022",
-         "data_fine": "19/12/2022",
-         "luogo_partenza": "Napoli",
-         "luogo_arrivo": "Milano",
-         "ora": 17,
-         "posti":200
-       } 
+        "data_inizio":"15/12/2022",
+        "data_fine": "16/12/2022",
+        "luogo_partenza": "Napoli",
+        "luogo_arrivo": "Milano",
+        "ora": 16
+    },
+    {    
+        "id": 3,
+        "id_mezzo": 2,
+        "data_inizio":"15/12/2022",
+        "data_fine": "16/12/2022",
+        "luogo_partenza": "Napoli",
+        "luogo_arrivo": "Milano",
+        "ora": 16
+    }
 
 ],
    "prenotazioni":[
@@ -49,21 +55,21 @@
         "id_prenotazione": 1,
         "nome":"Giacomino",
         "cognome":"Rossi",
-        "posti":15 
+        "posti_prenotati":15 
        },
        {
         "id_viaggio": 2,
         "id_prenotazione": 2,
         "nome":"Laura",
         "cognome":"Ferrari",
-        "posti":15
+        "posti_prenotati":15
        },
        {
         "id_viaggio": 1,
         "id_prenotazione": 3,
         "nome":"Giacomino",
         "cognome":"Rossi",
-        "posti": null
+        "posti_prenotati": 5
        }
 
 

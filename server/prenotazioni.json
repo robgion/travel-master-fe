@@ -2,43 +2,72 @@
    "mezzi":[
        {
            "id": 1,
-           "nome": "auto",
-           "posti": null
+           "nome": "auto"
        },
        {
            "id": 2,
-           "nome": "autobus",
-           "posti": 25
+           "nome": "autobus"
        }
    ],
+   "viaggi":[
+    {    
+        "id": 1,
+        "id_mezzo": 2,
+        "data_inizio":"15/12/2022",
+        "data_fine": "16/12/2022",
+        "luogo_partenza": "Napoli",
+        "luogo_arrivo": "Milano",
+        "ora": 16,
+        "posti":200
+
+    },
+    {    
+     "id": 2,
+     "id_mezzo": 2,
+      "data_inizio":"18/12/2022",
+      "data_fine": "19/12/2022",
+      "luogo_partenza": "Napoli",
+      "luogo_arrivo": "Milano",
+      "ora": 17,
+      "posti":200
+    },
+    {    
+        "id": 2,
+        "id_mezzo": 2,
+         "data_inizio":"18/12/2022",
+         "data_fine": "19/12/2022",
+         "luogo_partenza": "Napoli",
+         "luogo_arrivo": "Milano",
+         "ora": 17,
+         "posti":200
+       } 
+
+],
    "prenotazioni":[
        {
-        "id_mezzo": 2,
+        "id_viaggio": 2,
         "id_prenotazione": 1,
-        "data": ["16/05/2022", "17/05/2022", "18/05/2022", "19/05/2022"],
         "nome":"Giacomino",
         "cognome":"Rossi",
         "posti":15 
        },
        {
-        "id_mezzo": 2,
+        "id_viaggio": 2,
         "id_prenotazione": 2,
-        "data": ["20/05/2022", "21/05/2022", "22/05/2022", "23/05/2022"],
         "nome":"Laura",
-        "cognome":"Ferrari"
+        "cognome":"Ferrari",
+        "posti":15
        },
        {
-        "id_mezzo": 1,
-        "id_prenotazione": 1,
-        "data": ["16/05/2022", "17/05/2022", "18/05/2022", "19/05/2022"],
+        "id_viaggio": 1,
+        "id_prenotazione": 3,
         "nome":"Giacomino",
-        "cognome":"Rossi"
+        "cognome":"Rossi",
+        "posti": null
        }
 
 
-   ],
-   "bho":[ 
-
    ]
+  
 
 }

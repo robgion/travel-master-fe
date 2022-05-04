@@ -1,0 +1,44 @@
+{
+   "mezzi":[
+       {
+           "id": 1,
+           "nome": "auto",
+           "posti": null
+       },
+       {
+           "id": 2,
+           "nome": "autobus",
+           "posti": 25
+       }
+   ],
+   "prenotazioni":[
+       {
+        "id_mezzo": 2,
+        "id_prenotazione": 1,
+        "data": ["16/05/2022", "17/05/2022", "18/05/2022", "19/05/2022"],
+        "nome":"Giacomino",
+        "cognome":"Rossi",
+        "posti":15 
+       },
+       {
+        "id_mezzo": 2,
+        "id_prenotazione": 2,
+        "data": ["20/05/2022", "21/05/2022", "22/05/2022", "23/05/2022"],
+        "nome":"Laura",
+        "cognome":"Ferrari"
+       },
+       {
+        "id_mezzo": 1,
+        "id_prenotazione": 1,
+        "data": ["16/05/2022", "17/05/2022", "18/05/2022", "19/05/2022"],
+        "nome":"Giacomino",
+        "cognome":"Rossi"
+       }
+
+
+   ],
+   "bho":[
+
+   ]
+
+}

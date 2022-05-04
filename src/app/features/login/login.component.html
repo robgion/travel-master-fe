@@ -1,0 +1,15 @@
+
+<h2>Login component</h2>
+
+
+    <div>
+        <label>Utente:</label>
+        <input type="text" [(ngModel)]="username">
+        <label>Pass:</label>
+        <input type="text" [(ngModel)]="password">
+    </div>
+    
+    <div>
+        <button (click)="guestAuth(username, password)">invia</button>
+    </div>
+

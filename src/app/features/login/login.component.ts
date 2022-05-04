@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
   }
 
   guestAuth(username:string, password:string){
-    console.log(username);
-    
     if(username==="Diego" && password==="Diego"){
       //punta alla rotta del compoennte selezione mezzo / visualizza prenotazoni
       console.log("entrato");

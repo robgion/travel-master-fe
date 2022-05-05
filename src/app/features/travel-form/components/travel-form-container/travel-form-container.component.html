@@ -1,1 +1,41 @@
 <p>travel-form-container works!</p>
+
+<form #travelForm="ngForm" (submit) = "saveTravelByForm(travelForm)"> <!--all'evento submit scatena la ciamata alla funzione che prende in ingresso l'intero form-->
+
+    <div>
+        <label>Data Inizio:</label>
+        <input type="text" name="dataInizio"
+               #refDataInizio="ngModel" [(ngModel)]= "selectedTravel['dataInizio']"
+               required
+        >
+    </div>
+
+    <div>
+        <label>Data Fine:</label>
+        <input type="text" name="dataFine"
+               #refDataFine="ngModel" [ngModel]="selectedTravel.dataFine"
+               required
+        >
+    </div>
+
+    <div>
+        <label>Luogo Partenza:</label>
+        <input type="text" name="luogoPartenza"
+               #refLuogoPartenza="ngModel" [ngModel]="selectedTravel.luogoPartenza"
+               required
+        >
+    </div>
+
+    <div>
+        <label>Luogo Arrivo:</label>
+        <input type="text" name="luogoArrivo"
+               #refLuogoArrivo="ngModel" [ngModel]="selectedTravel.luogoArrivo"
+               required
+        >
+    </div>
+
+    <div>
+        <input type="submit" value="SAVE">
+      </div>
+
+</form>

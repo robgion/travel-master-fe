@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Travel } from 'src/app/shared/model/travel.model';
 
 @Component({
   selector: 'fin-travel-form-container',
@@ -8,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TravelFormContainerComponent implements OnInit {
 
+  selectedTravel: Travel;
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -20,6 +23,11 @@ export class TravelFormContainerComponent implements OnInit {
         const id = p['tipo_mezzo'];
       }
     ); 
+
+  }
+
+  saveTravelByForm(travelForm: NgForm): void{
+    console.log(travelForm)
 
   }
 

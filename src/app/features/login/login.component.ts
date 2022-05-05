@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
 
     this.userService.getUserAuth(username, password).subscribe(
       result => {
-        if (result) {
-          this.router.navigateByUrl('rottamenu')
+        //console.log(id[0]);
+        if (result && result.length===1) {
+          this.router.navigateByUrl('rotta')
         } else {
           console.log("Le crendiaziali non corrispondono a nessun utente registrato");
         }

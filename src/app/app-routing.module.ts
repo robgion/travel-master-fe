@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { MenuModule } from './features/menu/menu-module/menu.module';
 
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) }
-  // componente scelta mezzo/Pacchetti viaggi {path:'rottamenu', loadChildren: ()=> import(./rottamenumodulo).then(m=>m.modulomenu)}
+  /*{ path: 'login', redirectTo: '/menu', pathMatch: 'full' },*/
+  { path:'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
+  {path:'menu' , loadChildren: ()=> import('./features/menu/menu-module/menu.module').then(m=>m.MenuModule)}
 
 ];
 @NgModule({

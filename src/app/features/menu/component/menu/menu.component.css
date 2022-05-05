@@ -1,0 +1,10 @@
+.bottoneDestro{
+    float: right;
+    height:50px;
+    font-size: large;
+}
+.bottoneSinistro{
+    float: left;
+    height:50px;
+    font-size: large;
+}

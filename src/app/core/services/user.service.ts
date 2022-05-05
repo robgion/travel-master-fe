@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  public getUserAuth(username: string, password: string): Observable<User> {
+  public getUserAuth(username: string, password: string): Observable<User[]> {
     const url = environment.baseUrl + '/users/';
 
     let queryParams = new HttpParams()
@@ -20,7 +20,7 @@ export class UserService {
     console.log(queryParams);
 
 
-    return this.http.get<User>(url, { params: queryParams });
+    return this.http.get<User[]>(url, { params: queryParams });
   }
 }
 

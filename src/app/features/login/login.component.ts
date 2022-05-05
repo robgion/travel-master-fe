@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       result => {
         //console.log(id[0]);
         if (result && result.length===1) {
-          this.router.navigateByUrl('rotta')
+          this.router.navigateByUrl('menu')
         } else {
           console.log("Le crendiaziali non corrispondono a nessun utente registrato");
         }

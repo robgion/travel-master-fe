@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransportContainerComponent implements OnInit {
 
+  transportList: string[] = ["auto", "autobus", "aereo"];
+
   constructor() { }
 
   ngOnInit(): void {

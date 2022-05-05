@@ -1,1 +1,7 @@
 <p>transport-container works!</p>
+<div *ngFor="let tran of transportList" >
+<fin-transport-list-item
+    [transport] = "tran"
+    
+></fin-transport-list-item>
+</div>

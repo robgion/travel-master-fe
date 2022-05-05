@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'fin-menu',
@@ -11,13 +13,15 @@ export class MenuComponent implements OnInit {
   onClick(p){
     if(p==='prenota'){
       console.log(p)
-    }else{
+      this.router.navigateByUrl('transports')
+    }else {
+      this.router.navigateByUrl('booking')
       console.log(p)
     }
 
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

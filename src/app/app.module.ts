@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './@template/navbar.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonSelectorComponent } from './shared/components/common-selector/common-selector.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     HttpClientModule,
     AppRoutingModule,
-    NavbarModule
+    NavbarModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

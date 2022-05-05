@@ -2,6 +2,6 @@
 <div *ngFor="let tran of transportList" >
 <fin-transport-list-item
     [transport] = "tran"
-    
+    (selectDetail)="selectDetailHandler($event)"
 ></fin-transport-list-item>
 </div>

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'fin-transport-list-item',
@@ -8,9 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TransportListItemComponent implements OnInit {
 
   @Input() transport: string;
+  @Output() selectDetail: EventEmitter<String> = new EventEmitter<String>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  transportSelectionHandler(): void  {
+    this.selectDetail.emit(this.transport);
+    console.log("list item"+this.transport)
   }
 
 }

@@ -4,19 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 
- const routes: Routes=[
-  {path:'', redirectTo:'/login', pathMatch:'full'},
-  {path:'login', loadChildren: ()=> import('./features/login/login.module').then(m=>m.LoginModule)}
-  // componente scelta mezzo/Pacchetti viaggi {path:'', loadChildren: ()=> import(./).then(m=>m.)}
+const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) }
+  // componente scelta mezzo/Pacchetti viaggi {path:'rottamenu', loadChildren: ()=> import(./rottamenumodulo).then(m=>m.modulomenu)}
 
-]; 
+];
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

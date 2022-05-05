@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
+import { User } from 'src/app/shared/model/user-model';
 
 @Component({
   selector: 'fin-login',
@@ -8,22 +11,31 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   username: string = "";
-  password: string= "";
+  password: string = "";
 
-  constructor() { }
+  userAuth: string = "";
+
+  array: User;
+
+  constructor(private router: Router, private userService: UserService) {
+  }
 
   ngOnInit(): void {
   }
 
-  guestAuth(username:string, password:string){
-    if(username==="Diego" && password==="Diego"){
-      //punta alla rotta del compoennte selezione mezzo / visualizza prenotazoni
-      console.log("entrato");
-      
-    }else{
-      console.log("credenziali sbagliate");
-      
-    }
+  guestAuth(username: string, password: string) {
+
+    this.userService.getUserAuth(username, password).subscribe(
+      result => {
+        if (result) {
+          this.router.navigateByUrl('rottamenu')
+        } else {
+          console.log("Le crendiaziali non corrispondono a nessun utente registrato");
+        }
+      }, error => {
+        console.log(error);
+      }
+    )
 
   }
 }

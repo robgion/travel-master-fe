@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './@template/navbar.module';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { NavbarModule } from './@template/navbar.module';
   imports: [
     BrowserModule,
     FormsModule,
+    CoreModule,
+    HttpClientModule,
     AppRoutingModule,
     NavbarModule
   ],

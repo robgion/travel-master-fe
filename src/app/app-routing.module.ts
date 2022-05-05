@@ -9,8 +9,8 @@ const routes: Routes = [
   /*{ path: 'login', redirectTo: '/menu', pathMatch: 'full' },*/
   { path:'login', loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule) },
   {path:'menu' , loadChildren: ()=> import('./features/menu/menu-module/menu.module').then(m=>m.MenuModule)},
-  { path: 'transports', loadChildren: () => import('./features/transports/transports.module').then(m=>m.TransportsModule)}
-
+  { path: 'transports', loadChildren: () => import('./features/transports/transports.module').then(m=>m.TransportsModule)},
+  { path: 'booking', loadChildren: () => import('./features/booking/booking-module/booking-module.module').then(m=>m.BookingModuleModule)}
 ];
 @NgModule({
   declarations: [],

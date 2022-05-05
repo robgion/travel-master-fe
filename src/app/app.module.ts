@@ -9,11 +9,11 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { MenuModule } from './features/menu/menu-module/menu.module';
+import { TravelFormContainerComponent } from './features/travel-form/components/travel-form-container/travel-form-container.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    
+    AppComponent,    
   ],
   imports: [
     BrowserModule,
@@ -22,8 +22,6 @@ import { MenuModule } from './features/menu/menu-module/menu.module';
     HttpClientModule,
     AppRoutingModule,
     NavbarModule,
-    MenuModule,
-    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,12 +9,14 @@
     </tr>
 <!--da fare ciclo for per mettere i dati e la subscribe-->
     <tr *ngFor="let pren of listaPren">
+        <td>{{pren.id_viaggio}}</td>
         <td>{{pren.id}}</td>
-        <td>{{pren.}}</td>
-        <td>nome</td>
-        <td>cognome</td>
-        <td>posti prenotati</td>
-        <td><input type="button" value="modifica"><input type="button" value="elimina"></td>
+        <td>{{pren.nome}}</td>
+        <td>{{pren.cognome}}</td>
+        <td>{{pren.posti_prenotati}}</td>
+        <td><input type="button" value="modifica" (click)="onClickHandler" name={{pren.id}}>
+            <input type="button" value="elimina" (click)="deleteBookingHandler(pren.id)" name={{pren.id}}>
+        </td>
     </tr>
 
 

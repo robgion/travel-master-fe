@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from './services/user.service';
+import { BookingService } from './services/booking.service';
 
 
 
@@ -10,7 +11,8 @@ import { UserService } from './services/user.service';
     CommonModule
   ],
   providers: [
-    UserService
+    UserService,
+    BookingService
   ]
 })
 export class CoreModule { }

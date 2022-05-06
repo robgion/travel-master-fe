@@ -5,7 +5,7 @@
     <div>
         <label>Data Inizio:</label>
         <input type="text" name="dataInizio"
-               #refDataInizio="ngModel" [(ngModel)]= "selectedTravel['dataInizio']"
+               #refDataInizio="ngModel" [ngModel]="selectedTravel?.dataInizio"
                required
         >
     </div>
@@ -13,7 +13,7 @@
     <div>
         <label>Data Fine:</label>
         <input type="text" name="dataFine"
-               #refDataFine="ngModel" [ngModel]="selectedTravel.dataFine"
+               #refDataFine="ngModel" [ngModel]="selectedTravel?.dataFine"
                required
         >
     </div>
@@ -21,7 +21,7 @@
     <div>
         <label>Luogo Partenza:</label>
         <input type="text" name="luogoPartenza"
-               #refLuogoPartenza="ngModel" [ngModel]="selectedTravel.luogoPartenza"
+               #refLuogoPartenza="ngModel" [ngModel]="selectedTravel?.luogoPartenza"
                required
         >
     </div>
@@ -29,7 +29,7 @@
     <div>
         <label>Luogo Arrivo:</label>
         <input type="text" name="luogoArrivo"
-               #refLuogoArrivo="ngModel" [ngModel]="selectedTravel.luogoArrivo"
+               #refLuogoArrivo="ngModel" [ngModel]="selectedTravel?.luogoArrivo"
                required
         >
     </div>

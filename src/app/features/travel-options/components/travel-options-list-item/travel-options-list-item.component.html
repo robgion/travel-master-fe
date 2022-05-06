@@ -1,4 +1,9 @@
 
 <p>
     {{viaggio?.data_inizio}} {{viaggio?.data_fine}} {{viaggio?.luogo_partenza}} {{viaggio?.luogo_arrivo}}
+    <fin-common-selector
+        [text]="'prenota'"
+        (selection)="travelSelectionHandler()">
+        
+    </fin-common-selector>
 </p>

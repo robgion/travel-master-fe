@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BookingService } from 'src/app/core/services/booking.service';
 import { MezzoService } from 'src/app/core/services/mezzo.service';
 import { ViaggiService } from 'src/app/core/services/viaggi.service';
 import { Mezzi } from 'src/app/shared/model/mezzi-model';
@@ -28,11 +29,12 @@ export class TravelOptionsContainerComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private mezzoService: MezzoService,
-    private viaggiService: ViaggiService
+    private viaggiService: ViaggiService,
+    private bookingService: BookingService
   ) { }
 
   ngOnInit(): void {
-    
+
     this.route.params.subscribe(
       p => {
         this.mezzo = p['tipoMezzo'];
@@ -40,22 +42,22 @@ export class TravelOptionsContainerComponent implements OnInit {
         this.luogoArrivo = p['luogoArrivo']
         console.log(this.mezzo);
       }
-    ); 
+    );
 
     this.mezzoService.getMezzo(this.mezzo).subscribe(
       result => {
         console.log(result);
-        result.forEach( element => {
+        result.forEach(element => {
           this.idMezzi.push(element.id)
         });
-      console.log(this.idMezzi);
+        console.log(this.idMezzi);
       },
       error => {
-        console.log(error);   
+        console.log(error);
       }
     );
 
-    this.viaggiService.getViaggi(this.idMezzi, this.luogoPartenza, this.luogoArrivo).subscribe (
+    this.viaggiService.getViaggi(this.idMezzi, this.luogoPartenza, this.luogoArrivo).subscribe(
       result => {
         console.log("stampiamo risultati viaggi");
         console.log(result[0])
@@ -63,16 +65,28 @@ export class TravelOptionsContainerComponent implements OnInit {
           this.viaggiDisponibili.push(element)
           //console.log(element)
           console.log(this.viaggiDisponibili);
-          
+
         });
       },
-      error =>  {
+      error => {
         console.log(error)
       }
     )
 
+
   }
 
+  travelSelectionHandler(travel: Viaggi): void {
+    this.bookingService.createBooking(travel.id).subscribe(
+      response => {
+        console.log(response);
+      },
+      errore => {
+        console.log(errore);
+
+      }
+    )
+  }
 
 
 

@@ -69,6 +69,13 @@
       "nome": "Giacomino",
       "cognome": "Rossi",
       "posti_prenotati": 5
+    },
+    {
+      "nome": "Lucia",
+      "cognome": "Riva",
+      "posti_prenotati": 2,
+      "id_viaggio": 1,
+      "id": 50
     }
   ],
   "users": [

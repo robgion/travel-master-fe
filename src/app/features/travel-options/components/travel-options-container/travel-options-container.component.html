@@ -2,7 +2,7 @@
 
 <div>
     <fin-travel-options-list-item *ngFor="let viaggio of viaggiDisponibili"
-    [viaggio]="viaggio">
-
+    [viaggio]="viaggio"
+    (selectTravel)="travelSelectionHandler($event)">
     </fin-travel-options-list-item>
 </div>

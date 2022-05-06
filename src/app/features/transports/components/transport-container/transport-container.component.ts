@@ -18,7 +18,7 @@ export class TransportContainerComponent implements OnInit {
   }
  
   selectDetailHandler(transport: String): void {
-    const url = `travel_options/${transport}`;
+    const url = `travel_form/${transport}`;
     // const url = 'products/' + product.id;
     this.router.navigateByUrl(url);
     console.log(transport)

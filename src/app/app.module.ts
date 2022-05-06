@@ -7,16 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './@template/navbar.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './shared/shared.module';
-import { MenuModule } from './features/menu/menu-module/menu.module';
-import { BookingComponent } from './features/booking/booking/booking.component';
-import { BookingModuleModule } from './features/booking/booking-module/booking-module.module';
+
+    
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BookingComponent,
-    
+    AppComponent,    
   ],
   imports: [
     BrowserModule,
@@ -24,10 +20,7 @@ import { BookingModuleModule } from './features/booking/booking-module/booking-m
     CoreModule,
     HttpClientModule,
     AppRoutingModule,
-    NavbarModule,
-    MenuModule,
-    SharedModule,
-    BookingModuleModule
+    NavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from './services/user.service';
 import { MezzoService } from './services/mezzo.service';
+import { ViaggiService } from './services/viaggi.service';
 
 
 
@@ -12,7 +13,8 @@ import { MezzoService } from './services/mezzo.service';
   ],
   providers: [
     UserService,
-    MezzoService
+    MezzoService,
+    ViaggiService
   ]
 })
 export class CoreModule { }

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Booking } from 'src/app/shared/model/booking-model';
-import { Viaggi } from 'src/app/shared/model/viaggi-model';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
@@ -25,10 +24,17 @@ export class BookingService {
     return this.http.get<Booking[]>(url)
   }
 
-  public createBooking(id_viaggio: number): Observable<number> {
+  public createBooking(id_viaggio: number, nome: string, cognome: string, posti: number): Observable<any> {
     const url = environment.baseUrl + '/prenotazioni';
-    const prenotazione: Booking = { nome: "Lucia", cognome: "Riva", posti_prenotati: 2, id_viaggio: id_viaggio, id: 50 }
-    return this.http.post<number>(url, prenotazione);
+    console.log(nome);
+
+    const prenotazione: Booking = { nome: nome, cognome: cognome, posti_prenotati: posti, id_viaggio: id_viaggio, id: this.getRandomInt(1000) }
+    return this.http.post(url, prenotazione);
+  }
+
+  getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
   }
 
 }
+

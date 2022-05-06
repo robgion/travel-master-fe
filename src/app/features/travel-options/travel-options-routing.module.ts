@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TravelOptionsContainerComponent } from './components/travel-options-container/travel-options-container.component';
 
 const routes: Routes = [
-  { path: ':tipoMezzo/:dataInizio/:dataFine/:luogoPartenza/:luogoArrivo', component: TravelOptionsContainerComponent}
+  { path: ':tipoMezzo/:dataInizio/:dataFine/:luogoPartenza/:luogoArrivo/:nome/:cognome/:posti', component: TravelOptionsContainerComponent }
   //{ path: '', component: TravelOptionsContainerComponent}
 ]
 

@@ -23,6 +23,9 @@ export class TravelOptionsContainerComponent implements OnInit {
   idMezzi: number[] = [];
   luogoPartenza: string;
   luogoArrivo: string;
+  nome: string;
+  cognome: string;
+  posti: number;
   viaggiDisponibili: Viaggi[] = [];
 
   constructor(
@@ -40,17 +43,20 @@ export class TravelOptionsContainerComponent implements OnInit {
         this.mezzo = p['tipoMezzo'];
         this.luogoPartenza = p['luogoPartenza'];
         this.luogoArrivo = p['luogoArrivo']
-        console.log(this.mezzo);
+        this.nome = p['nome']
+        this.cognome = p['cognome']
+        this.posti = p['posti']
+        //console.log(p['nome']);
       }
     );
 
     this.mezzoService.getMezzo(this.mezzo).subscribe(
       result => {
-        console.log(result);
+        //console.log(result);
         result.forEach(element => {
           this.idMezzi.push(element.id)
         });
-        console.log(this.idMezzi);
+        //console.log(this.idMezzi);
       },
       error => {
         console.log(error);
@@ -64,22 +70,25 @@ export class TravelOptionsContainerComponent implements OnInit {
         result.forEach(element => {
           this.viaggiDisponibili.push(element)
           //console.log(element)
-          console.log(this.viaggiDisponibili);
-
+          //console.log(this.viaggiDisponibili);
         });
       },
       error => {
         console.log(error)
       }
     )
-
-
   }
 
-  travelSelectionHandler(travel: Viaggi): void {
-    this.bookingService.createBooking(travel.id).subscribe(
+  travelSelectionHandler(travel: Viaggi, nome: string, cognome: string, posti: number): void {
+    this.bookingService.createBooking(travel.id, nome, cognome, posti).subscribe(
       response => {
-        console.log(response);
+        if (response) {
+          const url = `booking`;
+          this.router.navigateByUrl(url);
+        }
+        //console.log("risposta:");
+        //console.log(response);
+        //console.log("fine risposta")
       },
       errore => {
         console.log(errore);
@@ -87,7 +96,5 @@ export class TravelOptionsContainerComponent implements OnInit {
       }
     )
   }
-
-
 
 }

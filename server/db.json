@@ -75,7 +75,14 @@
       "cognome": "Riva",
       "posti_prenotati": 2,
       "id_viaggio": 1,
-      "id": 50
+      "id": 612
+    },
+    {
+      "nome": "Lucio",
+      "cognome": "Rossi",
+      "posti_prenotati": "23",
+      "id_viaggio": 1,
+      "id": 932
     }
   ],
   "users": [

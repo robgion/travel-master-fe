@@ -12,6 +12,8 @@ export class TravelFormContainerComponent implements OnInit {
 
   selectedTravel: Travel;
 
+  mezzo: string;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +24,7 @@ export class TravelFormContainerComponent implements OnInit {
     
     this.route.params.subscribe(
       p => {
-        const id = p['tipo_mezzo'];
+        this.mezzo = p['tipo_mezzo'];
       }
     ); 
 
@@ -38,7 +40,9 @@ export class TravelFormContainerComponent implements OnInit {
       luogoArrivo: travelForm.value.luogoArrivo
     };
     console.log(obj);
-    const url = `travel_option/${obj.dataInizio}/${obj.dataFine}/${obj.luogoPartenza}/${obj.luogoArrivo}`
+    const url = `travel_option/${this.mezzo}/${obj.dataInizio}/${obj.dataFine}/${obj.luogoPartenza}/${obj.luogoArrivo}`
+    //const url = `travel_option`
+
     console.log(url);
     
     this.router.navigateByUrl(url);

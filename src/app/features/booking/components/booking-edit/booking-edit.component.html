@@ -1,0 +1,38 @@
+<p>booking-edit works!</p>
+
+<div *ngIf="!loading">
+
+     <p>
+          {{selectTravel.id}} {{selectTravel.id_mezzo}} {{selectTravel.data_inizio}} {{selectTravel.data_fine}}
+          {{selectTravel.luogo_partenza}}
+          {{selectTravel.luogo_arrivo}} {{selectTravel.ora}}
+     </p>
+
+
+
+     ---------------------------------------------------------------
+
+     <p>
+          {{selectBooking.id_viaggio}} {{selectBooking.id}} {{selectBooking.nome}} {{selectBooking.cognome}}
+          {{selectBooking.posti_prenotati}}
+     </p>
+
+
+     <div>
+          <form #bookingEditForm="ngForm" (submit)="editBookingByForm(bookingEditForm)">
+               <div>
+                    <label>Nome:</label> <input type="text" name="nome" #refNome="ngModel"
+                         [ngModel]="selectBooking.nome" required minlength="5">
+               </div>
+               <div>
+                    <!-- <small *ngIf="refNome.touched && refNome.invalid">
+                         Descrizione Obbligatoria
+                    </small> -->
+               </div>
+               <div>
+                    <input type="submit" value="SAVE" [disabled]="bookingEditForm.touched && bookingEditForm.invalid">
+               </div>
+          </form>
+     </div>
+
+</div>

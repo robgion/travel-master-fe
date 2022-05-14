@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarModule } from './@template/navbar.module';
+import { NavbarModule } from './@template/navbar/navbar.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 
-    
+
 
 @NgModule({
   declarations: [
-    AppComponent,    
+    AppComponent,
   ],
   imports: [
     BrowserModule,

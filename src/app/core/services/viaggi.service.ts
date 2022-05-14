@@ -24,4 +24,9 @@ export class ViaggiService {
 
     return this.http.get<Viaggi[]>(url, { params: queryParams });
   }
+
+  public getViaggio(id_viaggio: number): Observable<Viaggi> {
+    const url = environment.baseUrl + `/viaggi/${id_viaggio}`;
+    return this.http.get<Viaggi>(url);
+  }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BookingService } from 'src/app/core/services/booking.service';
 import { MezzoService } from 'src/app/core/services/mezzo.service';
 import { ViaggiService } from 'src/app/core/services/viaggi.service';
+import { Booking } from 'src/app/shared/model/booking-model';
 import { Mezzi } from 'src/app/shared/model/mezzi-model';
 import { Viaggi } from 'src/app/shared/model/viaggi-model';
 
@@ -14,11 +15,6 @@ import { Viaggi } from 'src/app/shared/model/viaggi-model';
 export class TravelOptionsContainerComponent implements OnInit {
 
   mezzo: string;
-
-  // 2 chiamate:
-  // 1. usiamo tipo mezzo per recuperare id mezzo
-  // 2. usiamo parametri per rimepire oggetto travel + id mezzo per filtrare tabella viaggi
-
 
   idMezzi: number[] = [];
   luogoPartenza: string;
@@ -46,17 +42,14 @@ export class TravelOptionsContainerComponent implements OnInit {
         this.nome = p['nome']
         this.cognome = p['cognome']
         this.posti = p['posti']
-        //console.log(p['nome']);
       }
     );
 
     this.mezzoService.getMezzo(this.mezzo).subscribe(
       result => {
-        //console.log(result);
         result.forEach(element => {
           this.idMezzi.push(element.id)
         });
-        //console.log(this.idMezzi);
       },
       error => {
         console.log(error);
@@ -65,12 +58,8 @@ export class TravelOptionsContainerComponent implements OnInit {
 
     this.viaggiService.getViaggi(this.idMezzi, this.luogoPartenza, this.luogoArrivo).subscribe(
       result => {
-        console.log("stampiamo risultati viaggi");
-        console.log(result[0])
         result.forEach(element => {
           this.viaggiDisponibili.push(element)
-          //console.log(element)
-          //console.log(this.viaggiDisponibili);
         });
       },
       error => {
@@ -80,15 +69,13 @@ export class TravelOptionsContainerComponent implements OnInit {
   }
 
   travelSelectionHandler(travel: Viaggi, nome: string, cognome: string, posti: number): void {
-    this.bookingService.createBooking(travel.id, nome, cognome, posti).subscribe(
+    const prenotazione: Booking = { nome: nome, cognome: cognome, posti_prenotati: posti, id_viaggio: travel.id, id: 0 }
+    this.bookingService.createBooking(prenotazione).subscribe(
       response => {
         if (response) {
           const url = `booking`;
           this.router.navigateByUrl(url);
         }
-        //console.log("risposta:");
-        //console.log(response);
-        //console.log("fine risposta")
       },
       errore => {
         console.log(errore);
